@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_atleast_onep.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 11:21:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/17 18:20:58 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/02/17 18:14:11 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/02/17 18:21:34 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-#define SO_LONG_H
+#include "so_long.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdbool.h>
-# include <mlx.h>
-# include "libft/libft.h"
+bool	ft_atleastone_onep(char **array)
+{
 
-char	**ft_get_map(int fd);
-bool	ft_rect_map(char **array);
-bool	ft_atleastone_onep(char **array);
-
-#endif
+}

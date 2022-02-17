@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_tab2dlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 11:21:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/17 18:20:58 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/02/17 18:34:57 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/02/17 18:39:30 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-#define SO_LONG_H
+#include "so_long.c"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdbool.h>
-# include <mlx.h>
-# include "libft/libft.h"
+size_t	ft_tab2dlen(char **array)
+{
+	size_t	len;
 
-char	**ft_get_map(int fd);
-bool	ft_rect_map(char **array);
-bool	ft_atleastone_onep(char **array);
-
-#endif
+	len = 0;
+	while (array[len])
+		len++;
+	return (len);
+}
