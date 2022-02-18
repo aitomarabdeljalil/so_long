@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tab2dlen.c                                      :+:      :+:    :+:   */
+/*   ft_check_exit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:34:57 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/17 18:39:30 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/02/18 16:08:47 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/02/18 16:37:43 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.c"
+#include "so_long.h"
 
-size_t	ft_tab2dlen(char **array)
+bool	ft_check_exit(char **array)
 {
-	size_t	len;
+	int	i;
+	int	j;
 
-	len = 0;
-	while (array[len])
-		len++;
-	return (len);
+	i = 0;
+	while (array[i])
+	{
+		j = 0;
+		while (array[i][j])
+		{
+			if (array[i][j] == 'E')
+				return (true);
+			j++;
+		}
+		i++;
+	}
+	return (false);
 }

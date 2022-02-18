@@ -6,32 +6,29 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:20:59 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/17 12:46:00 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:11:07 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-bool	ft_check_extension(char *str)
-{
-	while (*str != '.')
-		str++;
-	if (ft_strncmp(str, ".ber", 4) == 0)
-	{
-		if (str[4] == '\0')
-			return (true);
-	}
-	return (false);
-}
-
 int	main(int ac, char **av)
 {
-	bool	isber;
+	// bool	isber;
+	int i = -1;
+	t_so_long th;
 
-	if (ac != 2)
-		return (0);
-	isber = ft_check_extension(av[1]);
-	if (!isber)
-		return (0);
-	
+	// if (ac != 2)
+	// 	return (0);
+	// isber = ft_check_extension(av[1]);
+	// if (!isber)
+	// 	return (0);
+	void *mlx = mlx_init();
+	void *win = mlx_new_window(mlx ,13 * 42 ,5 * 42 ,"so_long");
+	// mlx_pixel_put(mlx, win, 20, 20, 0xff1493);
+	void *img = mlx_xpm_file_to_image(mlx, "./AnyConv.com__New Project.xpm", &th.width, &th.height);
+	while ( i++ < 13 * 60)
+		mlx_put_image_to_window(mlx, win ,img, i * 42 ,0);
+		mlx_key_hook();
+	mlx_loop(mlx);
 }

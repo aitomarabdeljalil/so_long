@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_map.c                                       :+:      :+:    :+:   */
+/*   ft_check_collect.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:18:33 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 19:02:54 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/02/18 17:29:06 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/02/18 17:31:03 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**ft_get_map(int fd)
+bool	ft_check_collect(char **array)
 {
-	char	**map;
-	char	*line;
-	int		i;
+	int	i;
+	int	j;
 
 	i = 0;
-	line = get_next_line(fd);
-	while (line)
+	while (array[i])
 	{
-		map[i++] = line;
-		free(line);
-		line = get_next_line(fd);
+		j = 0;
+		while (array[i][j])
+		{
+			if (array[i][j] == 'C')
+				return (true);
+			j++;
+		}
+		i++;
 	}
-	map[i] = NULL;
-	return (map);
+	return (false);
 }

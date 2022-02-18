@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atleast_onep.c                                  :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:14:11 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/17 18:21:34 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/02/17 18:34:57 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/02/18 18:54:50 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-bool	ft_atleastone_onep(char **array)
+size_t	ft_tablen(char **array)
 {
+	size_t	len;
 
+	len = 0;
+	while (array[len])
+		len++;
+	return (len);
 }

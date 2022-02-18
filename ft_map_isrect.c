@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_map.c                                       :+:      :+:    :+:   */
+/*   ft_map_isrect.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:18:33 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 19:02:54 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/02/18 18:14:32 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/02/18 18:20:05 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**ft_get_map(int fd)
+bool	ft_map_isrect(char **array)
 {
-	char	**map;
-	char	*line;
-	int		i;
+	int	a;
+	int	b;
 
-	i = 0;
-	line = get_next_line(fd);
-	while (line)
-	{
-		map[i++] = line;
-		free(line);
-		line = get_next_line(fd);
-	}
-	map[i] = NULL;
-	return (map);
+	a = ft_strlen(array[0]);
+	b = ft_tablen(array);
+	if (a == b)
+		return (false);
+	return (true);
 }

@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_map.c                                       :+:      :+:    :+:   */
+/*   ft_check_extension.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:18:33 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 19:02:54 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/02/18 18:56:12 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/02/18 18:56:36 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**ft_get_map(int fd)
+bool	ft_check_extension(char *str)
 {
-	char	**map;
-	char	*line;
-	int		i;
-
-	i = 0;
-	line = get_next_line(fd);
-	while (line)
+	while (*str != '.')
+		str++;
+	if (ft_strncmp(str, ".ber", 4) == 0)
 	{
-		map[i++] = line;
-		free(line);
-		line = get_next_line(fd);
+		if (str[4] == '\0')
+			return (true);
 	}
-	map[i] = NULL;
-	return (map);
+	return (false);
 }
