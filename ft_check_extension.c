@@ -6,20 +6,16 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:56:12 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 18:56:36 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:49:53 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+//strrchr
 bool	ft_check_extension(char *str)
 {
-	while (*str != '.')
+	while (*str != '.' && *str)
 		str++;
-	if (ft_strncmp(str, ".ber", 4) == 0)
-	{
-		if (str[4] == '\0')
-			return (true);
-	}
-	return (false);
+	return (ft_strncmp(str, ".ber", 5) == 0);
 }

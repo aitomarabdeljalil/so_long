@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_collect.c                                 :+:      :+:    :+:   */
+/*   ft_check_elem.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:29:06 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 17:31:03 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:54:07 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-bool	ft_check_collect(char **array)
+bool	ft_check_elem(char **array, char c)
 {
 	int	i;
 	int	j;
@@ -23,7 +23,7 @@ bool	ft_check_collect(char **array)
 		j = 0;
 		while (array[i][j])
 		{
-			if (array[i][j] == 'C')
+			if (array[i][j] == c)
 				return (true);
 			j++;
 		}

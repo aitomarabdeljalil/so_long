@@ -1,10 +1,10 @@
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror
 NAME	:= libft.a
-SRC		:= ft_memcpy ft_strlcpy.c ft_strncmp.c ft_strlen.c ft_strjoin.c ft_strndup.c get_next_line.c
+SRC		:= ft_memcpy ft_strlcpy.c ft_strncmp.c ft_split.c ft_strlen.c ft_strjoin.c ft_strndup.c get_next_line.c
 OBJ		:= $(patsubst %.c, %.o, $(SRC))
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
 
 all: $(NAME)
 

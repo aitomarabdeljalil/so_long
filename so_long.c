@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:20:59 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 19:11:07 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:56:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 int	main(int ac, char **av)
 {
-	// bool	isber;
+	bool	isber;
 	int i = -1;
-	t_so_long th;
+	t_solong th;
 
-	// if (ac != 2)
-	// 	return (0);
-	// isber = ft_check_extension(av[1]);
-	// if (!isber)
-	// 	return (0);
-	void *mlx = mlx_init();
-	void *win = mlx_new_window(mlx ,13 * 42 ,5 * 42 ,"so_long");
-	// mlx_pixel_put(mlx, win, 20, 20, 0xff1493);
-	void *img = mlx_xpm_file_to_image(mlx, "./AnyConv.com__New Project.xpm", &th.width, &th.height);
+	if (ac != 2)
+		return (0);
+	isber = ft_check_extension(av[1]);
+	if (!isber)
+		return (0);
+	th.mlx = mlx_init();
+	th.win = mlx_new_window(th.mlx ,13 * 42 ,5 * 42 ,"so_long");
+	th.player = mlx_xpm_file_to_image(th.mlx, "img/messi.xpm", &th.width, &th.height);
 	while ( i++ < 13 * 60)
-		mlx_put_image_to_window(mlx, win ,img, i * 42 ,0);
-		mlx_key_hook();
-	mlx_loop(mlx);
+		mlx_put_image_to_window(th.mlx, th.win ,th.player, i * 42 ,0);
+	// mlx_key_hook();
+	mlx_loop(th.mlx);
+	return (0);
 }

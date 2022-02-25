@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:21:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 19:09:45 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:47:00 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <mlx.h>
 # include "libft/libft.h"
 
-typedef struct s_so_long
+typedef struct s_solong
 {
 	void	*mlx;
 	void	*win;
@@ -29,7 +29,7 @@ typedef struct s_so_long
 	void	*bground;
 	int		height;
 	int		width;
-}	t_so_long;
+}	t_solong;
 
 char	**ft_get_map(int fd);
 size_t	ft_tablen(char **array);
