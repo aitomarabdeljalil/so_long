@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:18:33 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 19:02:54 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/26 18:42:13 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	**ft_get_map(int fd)
 	while (line)
 	{
 		map[i++] = line;
+		if (line[0] == '\n')
+			errno = 1;
 		free(line);
 		line = get_next_line(fd);
 	}

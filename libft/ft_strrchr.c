@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_extension.c                               :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 18:56:12 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/26 18:40:22 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/04 14:41:06 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/07 14:07:47 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-bool	ft_check_extension(char *str)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*ext;
+	const char	*start;
 
-	ext = ft_strrchr(str, '.');
-	if (!ext)
-		return (false);
-	return (ft_strncmp(ext, ".ber", 5) == 0);
+	start = s;
+	s += ft_strlen(s);
+	while (*s != (char)c)
+	{
+		if (s == start)
+			return (NULL);
+		s--;
+	}
+	return ((char *)s);
 }

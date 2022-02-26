@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:21:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/25 17:47:00 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/26 18:49:20 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <mlx.h>
+# include <errno.h>
+# include<sys/types.h>
+# include <fcntl.h>
 # include "libft/libft.h"
 
 typedef struct s_solong

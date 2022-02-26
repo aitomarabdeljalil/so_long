@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:12:35 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/25 17:48:38 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/26 09:41:15 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*get_next_line(int fd);
 char	**ft_split(const char *s, char c);
-
+char	*ft_strrchr(const char *s, int c);
 #endif
