@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tablen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:34:57 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 18:54:50 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/07 11:24:37 by aait-oma          #+#    #+#             */
+/*   Updated: 2021/11/07 11:31:16 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-size_t	ft_tablen(char **array)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	len;
-
-	len = 0;
-	while (array[len])
-		len++;
-	return (len);
+	write(fd, &c, 1);
 }

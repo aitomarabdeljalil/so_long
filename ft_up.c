@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_isrect.c                                    :+:      :+:    :+:   */
+/*   ft_up.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 18:14:32 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/18 18:20:05 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/06 11:49:42 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/06 13:38:32 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-bool	ft_map_isrect(char **array)
+int	ft_up(t_solong **th, int x, int y)
 {
-	int	a;
-	int	b;
-
-	a = ft_strlen(array[0]);
-	b = ft_tablen(array);
-	if (a == b)
-		return (false);
-	return (true);
+	(*th)->map[x][y] = '0';
+	(*th)->map[--x][y] = 'P';
+	return (x);
 }

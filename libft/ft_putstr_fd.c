@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_extension.c                               :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 18:56:12 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/26 18:40:22 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/07 11:43:40 by aait-oma          #+#    #+#             */
+/*   Updated: 2021/11/12 20:06:58 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-bool	ft_check_extension(char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*ext;
-
-	ext = ft_strrchr(str, '.');
-	if (!ext)
-		return (false);
-	return (ft_strncmp(ext, ".ber", 5) == 0);
+	if (s)
+	{
+		while (*s != '\0')
+		{
+			write(fd, s, 1);
+			s++;
+		}
+	}
 }

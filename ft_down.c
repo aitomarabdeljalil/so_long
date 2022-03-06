@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_elem.c                                    :+:      :+:    :+:   */
+/*   ft_down.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 17:29:06 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/25 18:54:07 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/06 13:47:45 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/06 17:18:00 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-bool	ft_check_elem(char **array, char c)
+int	ft_down(t_solong **th, int nc, int x, int y)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (array[i])
+	if ((*th)->map[x + 1][y] == 'E' && !nc)
 	{
-		j = 0;
-		while (array[i][j])
-		{
-			if (array[i][j] == c)
-				return (true);
-			j++;
-		}
-		i++;
+		(*th)->map[x][y] = '0';
+		(*th)->map[++x][y] = 'P';
 	}
-	return (false);
+	else if ((*th)->map[x + 1][y] != '1' && (*th)->map[x + 1][y] != 'E')
+	{
+		(*th)->map[x][y] = '0';
+		(*th)->map[++x][y] = 'P';
+	}
+	return (x);
 }
