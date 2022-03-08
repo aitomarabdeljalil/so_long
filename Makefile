@@ -1,7 +1,9 @@
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
 NAME	:= so_long
-SRC		:= ft_checkelem.c ft_checkwalls.c ft_get_map.c ft_isber.c ft_mapvalid.c ft_up.c ft_down.c so_long.c
+SRC		:= src/ft_checkelem.c src/ft_checkvalidchar.c src/ft_checkwalls.c src/ft_down.c src/ft_get_map.c\
+			src/ft_isber.c src/ft_left.c src/ft_mapvalid.c src/ft_msg.c src/ft_right.c\
+			src/ft_up.c src/move_ply.c so_long.c
 OBJ		:= $(patsubst %.c, %.o, $(SRC))
 
 .PHONY: all clean fclean re

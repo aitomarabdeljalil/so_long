@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isber.c                                         :+:      :+:    :+:   */
+/*   ft_down.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 16:54:13 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/03 12:37:58 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/06 13:47:45 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/08 18:44:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-bool	ft_isber(char *str)
+int	ft_down(t_solong *th, int nc, int x, int y)
 {
-	char	*ext;
-
-	ext = ft_strrchr(str, '.');
-	if (!ext)
-		return (false);
-	return (ft_strncmp(ext, ".ber", 5) == 0);
+	if (!nc && th->map[x + 1][y] == 'E')
+		ft_msg("you won", 1);
+	else if (th->map[x + 1][y] == 'E' && !nc)
+	{
+		th->map[x][y] = '0';
+		th->map[++x][y] = 'P';
+	}
+	else if (th->map[x + 1][y] != '1' && th->map[x + 1][y] != 'E')
+	{
+		th->map[x][y] = '0';
+		th->map[++x][y] = 'P';
+	}
+	return (x);
 }

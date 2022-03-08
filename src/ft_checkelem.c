@@ -6,11 +6,11 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:50:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/03 16:23:15 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/03/08 18:44:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	ft_checkone(char **map, char c)
 {

@@ -6,11 +6,11 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:17:51 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/05 20:08:16 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/03/08 18:43:53 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 size_t	ft_tablen(char **array)
 {

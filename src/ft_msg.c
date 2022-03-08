@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_down.c                                          :+:      :+:    :+:   */
+/*   ft_msg.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 13:47:45 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/06 17:18:00 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/07 11:12:08 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/08 18:44:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-int	ft_down(t_solong **th, int nc, int x, int y)
+void	ft_msg(char *msg, int fd)
 {
-	if ((*th)->map[x + 1][y] == 'E' && !nc)
-	{
-		(*th)->map[x][y] = '0';
-		(*th)->map[++x][y] = 'P';
-	}
-	else if ((*th)->map[x + 1][y] != '1' && (*th)->map[x + 1][y] != 'E')
-	{
-		(*th)->map[x][y] = '0';
-		(*th)->map[++x][y] = 'P';
-	}
-	return (x);
+	ft_putendl_fd(msg, fd);
+	exit(0);
 }

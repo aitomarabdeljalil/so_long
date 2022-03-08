@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_isber.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 14:41:04 by syakoubi          #+#    #+#             */
-/*   Updated: 2021/11/07 16:28:57 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/02 16:54:13 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/08 18:44:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../so_long.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+bool	ft_isber(char *str)
 {
-	size_t	i;
+	char	*ext;
 
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	ext = ft_strrchr(str, '.');
+	if (!ext)
+		return (false);
+	return (ft_strncmp(ext, ".ber", 5) == 0);
 }

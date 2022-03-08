@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_left.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 14:41:04 by syakoubi          #+#    #+#             */
-/*   Updated: 2021/11/07 16:28:57 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/07 11:17:30 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/08 18:44:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../so_long.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_left(t_solong *th, int nc, int x, int y)
 {
-	size_t	i;
-
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	if (th->map[x][y - 1] == 'E')
+		ft_msg("you won", 1);
+	else if (th->map[x][y - 1] == 'E' && !nc)
+	{
+		th->map[x][y] = '0';
+		th->map[x][--y] = 'P';
+	}
+	else if (th->map[x][y - 1] != '1' && th->map[x][y - 1] != 'E')
+	{
+		th->map[x][y] = '0';
+		th->map[x][--y] = 'P';
+	}
+	return (y);
 }
