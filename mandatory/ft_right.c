@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	ft_right(t_solong *th, int nc, int x, int y)
 {
-	if (th->map[x][y + 1] == 'E')
-		ft_msg("you won", 1);
+	if (nc == 0 && th->map[x][y + 1] == 'E')
+		ft_msg("you won", th, true, false);
+	else if (th->map[x][y + 1] == 'N')
+		ft_msg("you lost", th, true, false);
 	else if (th->map[x][y + 1] == 'E' && !nc)
 	{
 		th->map[x][y] = '0';
@@ -26,5 +28,6 @@ int	ft_right(t_solong *th, int nc, int x, int y)
 		th->map[x][y] = '0';
 		th->map[x][++y] = 'P';
 	}
+	th->dr = 2;
 	return (y);
 }

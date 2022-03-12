@@ -5,26 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 18:27:42 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/08 19:09:55 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/09 10:15:40 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/11 21:03:01 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
-
-static void	clear_reload(t_solong *th, int mv)
-{
-	mlx_clear_window(th->mlx, th->win);
-	reload_win(th);
-	ft_putnbr_fd(mv, 1);
-	ft_putchar_fd('\n', 1);
-}
+#include "so_long_bonus.h"
 
 int	move_ply(int keycode, t_solong *th)
 {
 	int			x;
 	int			y;
-	static int	mv;
 	int			nc;
 
 	nc = ft_checkone(th->map, 'C');
@@ -42,8 +33,8 @@ int	move_ply(int keycode, t_solong *th)
 		exit(0);
 	if (x != th->x || y != th->y)
 	{
-		mv++;
-		clear_reload(th, mv);
+		th->mv++;
+		clear_reload(th);
 	}
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:54:13 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/08 18:44:41 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/03/08 20:38:52 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "common.h"
 
 bool	ft_isber(char *str)
 {

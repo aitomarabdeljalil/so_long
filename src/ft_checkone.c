@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkelem.c                                     :+:      :+:    :+:   */
+/*   ft_checkone.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 17:50:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/08 18:44:41 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/09 11:10:25 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/09 19:46:58 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "common.h"
 
 int	ft_checkone(char **map, char c)
 {
@@ -32,19 +32,4 @@ int	ft_checkone(char **map, char c)
 		i++;
 	}
 	return (ret);
-}
-
-bool	ft_checkelem(char **map)
-{
-	if (ft_checkone(map, '1') == 0)
-		return (false);
-	if (ft_checkone(map, '0') == 0)
-		return (false);
-	if (ft_checkone(map, 'C') == 0)
-		return (false);
-	if (ft_checkone(map, 'P') != 1)
-		return (false);
-	if (ft_checkone(map, 'E') == 0)
-		return (false);
-	return (true);
 }

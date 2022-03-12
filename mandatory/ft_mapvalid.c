@@ -6,11 +6,11 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:32:12 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/08 19:39:48 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/03/09 12:53:28 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 char	**ft_mapvalid(char *path, char *els)
 {

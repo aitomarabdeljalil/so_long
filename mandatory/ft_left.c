@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_down.c                                          :+:      :+:    :+:   */
+/*   ft_left.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 13:47:45 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/08 18:44:41 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/07 11:17:30 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/10 06:09:27 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
-int	ft_down(t_solong *th, int nc, int x, int y)
+int	ft_left(t_solong *th, int nc, int x, int y)
 {
-	if (!nc && th->map[x + 1][y] == 'E')
-		ft_msg("you won", 1);
-	else if (th->map[x + 1][y] == 'E' && !nc)
+	if (nc == 0 && th->map[x][y - 1] == 'E')
+		ft_msg("you won", th, true, false);
+	else if (th->map[x][y - 1] == 'N')
+		ft_msg("you lost", th, true, false);
+	else if (th->map[x][y - 1] == 'E' && !nc)
 	{
 		th->map[x][y] = '0';
-		th->map[++x][y] = 'P';
+		th->map[x][--y] = 'P';
 	}
-	else if (th->map[x + 1][y] != '1' && th->map[x + 1][y] != 'E')
+	else if (th->map[x][y - 1] != '1' && th->map[x][y - 1] != 'E')
 	{
 		th->map[x][y] = '0';
-		th->map[++x][y] = 'P';
+		th->map[x][--y] = 'P';
 	}
-	return (x);
+	th->dr = 0;
+	return (y);
 }

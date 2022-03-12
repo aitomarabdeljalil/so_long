@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_msg.c                                           :+:      :+:    :+:   */
+/*   ft_checkelem.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 11:12:08 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/10 05:42:11 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/09 11:01:58 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/09 18:19:34 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "so_long.h"
 
-void	ft_error(char *msg, t_solong *th, bool d, bool b)
+bool	ft_checkelem(char **map)
 {
-	ft_putendl_fd(msg, 2);
-	if (d)
-		ft_destroy(th, b);
-	exit(0);
-}
-
-void	ft_msg(char *msg, t_solong *th, bool d, bool b)
-{
-	ft_putendl_fd(msg, 1);
-	if (d)
-		ft_destroy(th, b);
-	exit(0);
+	if (ft_checkone(map, '1') == 0)
+		return (false);
+	if (ft_checkone(map, '0') == 0)
+		return (false);
+	if (ft_checkone(map, 'C') == 0)
+		return (false);
+	if (ft_checkone(map, 'P') != 1)
+		return (false);
+	if (ft_checkone(map, 'E') == 0)
+		return (false);
+	return (true);
 }
