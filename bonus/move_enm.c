@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 09:24:24 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/12 09:38:08 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/03/12 21:24:24 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	enm_pos_y(t_solong *th)
 		while (th->map[i][j])
 		{
 			if (th->map[i][j] == 'N')
-				return(j);
+				return (j);
 			j++;
 		}
 		i++;
@@ -104,7 +104,7 @@ int	enm_pos_x(t_solong *th)
 		while (th->map[i][j])
 		{
 			if (th->map[i][j] == 'N')
-				return(i);
+				return (i);
 			j++;
 		}
 		i++;
@@ -114,8 +114,8 @@ int	enm_pos_x(t_solong *th)
 
 void	put_image(t_solong *th, char *relative_path)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 	void	*img;
 
 	i = 0;
@@ -135,27 +135,22 @@ void	put_image(t_solong *th, char *relative_path)
 		i++;
 	}
 }
+
 void	move_clc(t_solong *th)
 {
-	static	int i;
-	static int mode;
+	static int i;
 
-	if (i == 0)
-		mode = 1;
-	if (i == 40)
-		mode = 0;
-	if (i == 10)
+	if (i <= 15)
 		put_image(th, "img/1.xpm");
-	else if (i == 20)
+	else if (i <= 30)
 		put_image(th, "img/2.xpm");
-	else if (i == 30)
+	else if (i <= 45)
 		put_image(th, "img/3.xpm");
-	else if (i == 40)
+	else if (i <= 60)
 		put_image(th, "img/4.xpm");
-	if (mode == 1)
-		i++;
-	if (mode == 0)
-		i--;
+	i++;
+	if (i == 60)
+		i = 0;
 }
 
 int	move_enm(t_solong *th)
@@ -177,4 +172,3 @@ int	move_enm(t_solong *th)
 	move_clc(th);
 	return (0);
 }
-
