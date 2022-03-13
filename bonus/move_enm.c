@@ -6,71 +6,11 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 09:24:24 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/12 21:24:24 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:01:36 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-void	enm_left(t_solong *th)
-{
-	if (th->map[th->x_e][th->y_e - 1] == '0')
-	{
-		th->map[th->x_e][th->y_e] = '0';
-		th->map[th->x_e][--th->y_e] = 'N';
-	}
-	else if (th->map[th->x_e][th->y_e - 1] == 'P')
-	{
-		th->map[th->x_e][th->y_e] = '0';
-		th->map[th->x_e][--th->y_e] = 'N';
-		ft_msg("you lost", th, true, true);
-	}
-}
-
-void	enm_right(t_solong *th)
-{
-	if (th->map[th->x_e][th->y_e + 1] == '0')
-	{
-		th->map[th->x_e][th->y_e] = '0';
-		th->map[th->x_e][++th->y_e] = 'N';
-	}
-	else if (th->map[th->x_e][th->y_e + 1] == 'P')
-	{
-		th->map[th->x_e][th->y_e] = '0';
-		th->map[th->x_e][++th->y_e] = 'N';
-		ft_msg("you lost", th, true, true);
-	}
-}
-
-void	enm_up(t_solong *th)
-{
-	if (th->map[th->x_e - 1][th->y_e] == '0')
-	{
-		th->map[th->x_e][th->y_e] = '0';
-		th->map[--th->x_e][th->y_e] = 'N';
-	}
-	else if (th->map[th->x_e - 1][th->y_e] == 'P')
-	{
-		th->map[th->x_e][th->y_e] = '0';
-		th->map[--th->x_e][th->y_e] = 'N';
-		ft_msg("you lost", th, true, true);
-	}
-}
-
-void	enm_down(t_solong *th)
-{
-	if (th->map[th->x_e + 1][th->y_e] == '0')
-	{
-		th->map[th->x_e][th->y_e] = '0';
-		th->map[++th->x_e][th->y_e] = 'N';
-	}
-	else if (th->map[th->x_e + 1][th->y_e] == 'P')
-	{
-		th->map[th->x_e][th->y_e] = '0';
-		th->map[++th->x_e][th->y_e] = 'N';
-		ft_msg("you lost", th, true, true);
-	}
-}
 
 int	enm_pos_y(t_solong *th)
 {
@@ -112,48 +52,7 @@ int	enm_pos_x(t_solong *th)
 	return (-1);
 }
 
-void	put_image(t_solong *th, char *relative_path)
-{
-	int		i;
-	int		j;
-	void	*img;
-
-	i = 0;
-	img = mlx_xpm_file_to_image(th->mlx, relative_path, &th->wth, &th->hgt);
-	while (th->map[i])
-	{
-		j = 0;
-		while (th->map[i][j])
-		{
-			if (th->map[i][j] == 'C')
-			{
-				mlx_put_image_to_window(th->mlx, th->win, th->bg, j * 60, i * 60);
-				mlx_put_image_to_window(th->mlx, th->win, img, j * 60, i * 60);
-			}
-			j++;
-		}
-		i++;
-	}
-}
-
-void	move_clc(t_solong *th)
-{
-	static int i;
-
-	if (i <= 15)
-		put_image(th, "img/1.xpm");
-	else if (i <= 30)
-		put_image(th, "img/2.xpm");
-	else if (i <= 45)
-		put_image(th, "img/3.xpm");
-	else if (i <= 60)
-		put_image(th, "img/4.xpm");
-	i++;
-	if (i == 60)
-		i = 0;
-}
-
-int	move_enm(t_solong *th)
+void	move_enm(t_solong *th)
 {
 	int	rd;
 
@@ -169,6 +68,4 @@ int	move_enm(t_solong *th)
 	else if (rd == 4)
 		enm_down(th);
 	clear_reload(th);
-	move_clc(th);
-	return (0);
 }

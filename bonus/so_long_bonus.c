@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:20:59 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/11 21:17:48 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:02:33 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int ac, char **av)
 	clear_reload(&th);
 	mlx_hook(th.win, 2, 1L << 1, move_ply, &th);
 	mlx_hook(th.win, 17, 2, ft_exit, &th);
-	mlx_loop_hook(th.mlx, move_enm, &th);
+	mlx_loop_hook(th.mlx, animation, &th);
 	mlx_loop(th.mlx);
 	ft_destroy(&th, true);
 	return (0);
