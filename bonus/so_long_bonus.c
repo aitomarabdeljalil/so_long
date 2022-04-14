@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:20:59 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/13 22:02:33 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/04/10 22:37:09 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int ac, char **av)
 	y = 0;
 	th.map = ft_mapvalid(av[1], "01PCEN");
 	if (!th.map)
-		ft_error("map error", &th, true, true);
+		ft_error("map error", &th, false, true);
 	game_init(&th);
 	clear_reload(&th);
 	mlx_hook(th.win, 2, 1L << 1, move_ply, &th);
